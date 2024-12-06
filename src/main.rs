@@ -5,6 +5,7 @@ use std::{
 };
 
 mod day1;
+mod day2;
 
 fn lines_from_file(filename: impl AsRef<Path>) -> Vec<String> {
     let file = File::open(filename).expect("no such file");
@@ -18,4 +19,8 @@ fn main() {
     let lines: Vec<String> = lines_from_file("input/day1.txt");
     println!("day 1 part 1: {:?}", day1::part1(&lines));
     println!("day 1 part 2: {:?}", day1::part2(&lines));
+
+    let lines: Vec<String> = lines_from_file("input/day2.txt");
+    println!("day 2 part 1: {:?}", day2::part1(&lines));
+    println!("day 2 part 2: {:?}", day2::part2(&lines));
 }
