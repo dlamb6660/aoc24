@@ -1,4 +1,5 @@
 use std::{
+    fs,
     fs::File,
     io::{prelude::*, BufReader},
     path::Path,
@@ -6,6 +7,7 @@ use std::{
 
 mod day1;
 mod day2;
+mod day3;
 
 fn lines_from_file(filename: impl AsRef<Path>) -> Vec<String> {
     let file = File::open(filename).expect("no such file");
@@ -23,4 +25,8 @@ fn main() {
     let lines: Vec<String> = lines_from_file("input/day2.txt");
     println!("day 2 part 1: {:?}", day2::part1(&lines));
     println!("day 2 part 2: {:?}", day2::part2(&lines));
+
+    let txt: String = fs::read_to_string("input/day3.txt").unwrap();
+    println!("day 3 part 1: {:?}", day3::part1(&txt));
+    println!("day 3 part 2: {:?}", day3::part2(&txt));
 }
