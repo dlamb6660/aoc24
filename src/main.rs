@@ -10,6 +10,8 @@ mod day2;
 mod day3;
 mod day4;
 
+mod day24;
+
 fn lines_from_file(filename: impl AsRef<Path>) -> Vec<String> {
     let file = File::open(filename).expect("no such file");
     let buf = BufReader::new(file);
@@ -34,4 +36,8 @@ fn main() {
     let lines: Vec<String> = lines_from_file("input/day4.txt");
     println!("day 4 part 1: {:?}", day4::part1(&lines));
     println!("day 4 part 2: {:?}", day4::part2(&lines));
+
+    let lines: Vec<String> = lines_from_file("input/day24.txt");
+    println!("day 24 part 1: {:?}", day24::part1(&lines));
+    // println!("day 24 part 2: {:?}", day24::part2(&lines));
 }
